@@ -8,7 +8,7 @@ const TodoList = ({todoList,onCheckBtnClick,handleDelete}) => {
         <div className='productlist' key={todo.id} >
             <input type="checkbox"onClick={() => onCheckBtnClick(todo.id)}/>
             <label className={(todo.isCompleted)?"label":""}>{todo.name}</label>
-            <button className={todo.isCompleted?"hide":"deck"} onClick={() => handleDelete(todo.id)}>DELETE</button>
+            <button className={todo.isCompleted?"hide":"deck"} onClick={() => handleDelete(todo.id)} >DELETE</button>
         </div>  
     ))}          
     </div>  

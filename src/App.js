@@ -11,6 +11,7 @@ function App() {
 
     const [todoList, setTodoList] = useState([])
     const [value, setValue] = useState("")
+    const [dataComplate, setDataComplate] = useState([])
 
     useEffect(() => {
         const checktoragedTodoList = localStorage.getItem(TEST_VER1);
@@ -36,7 +37,17 @@ function App() {
             todo.id === id ? { ...todo, isCompleted: true } : todo
           )
         )
-      }, []);
+        const result = todoList.filter(work=>work.isCompleted === true)
+        // setDataComplate(...dataComplate, todoList )
+        setDataComplate({...dataComplate, result})
+      }, [todoList, dataComplate]);
+
+      console.log(dataComplate)
+      //chưa kịp làm page compalate
+
+    
+      // const result = todoList.filter(work=>work.isCompleted === true)
+      // setDataComplate(result)
 
       const handleDelete = useCallback((id) => {
         setTodoList((prevState) =>
