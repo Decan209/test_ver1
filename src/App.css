@@ -57,5 +57,10 @@
     text-decoration : line-through;
 }
 .deck{
-    color: red
+    display: none;
+    color: red;
+
+}
+.hide{
+    display: black;
 }

@@ -22,7 +22,6 @@ function App() {
       useEffect(() => {
         localStorage.setItem(TEST_VER1, JSON.stringify(todoList));
       },[todoList])
-      console.log(todoList);
 
     const handleChange = useCallback((e) =>{
         setValue(e.target.value)
@@ -41,10 +40,9 @@ function App() {
 
       const handleDelete = useCallback((id) => {
         setTodoList((prevState) =>
-        prevState.map((todo) =>
-          todo.id.filter(id) 
-        )
-      )
+          prevState.filter((todo) =>(todo.id !== id)
+        ))
+
       }, []);
 
 
